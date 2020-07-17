@@ -20,19 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f36fa85f-88ad-4364-a170-913d97559c22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/appContext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frame/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frame/header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frame/sidebar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frame/sidebar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/addWord/addWordPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/addWord/addWordPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/trainWaterfall/trainWaterFall.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/pages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/vocabulary/vocabularyPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/vocabulary/vocabularyPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +33,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1eoYnmubsc05QqeXX96u8bWRYfY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -53,7 +52,10 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -86,6 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1594989581336</updated>
       <workItem from="1594989582550" duration="5845000" />
+      <workItem from="1595010669901" duration="1057000" />
     </task>
     <servers />
   </component>
@@ -102,28 +105,29 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="641" y="355" width="628" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594993541379">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="641" y="355" width="628" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1594993541379" />
-    <state width="1897" height="275" key="GridCell.Tab.0.bottom" timestamp="1594990065704">
+    <state width="1874" height="196" key="GridCell.Tab.0.bottom" timestamp="1595010710140">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1897" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1594990065704" />
-    <state width="1897" height="275" key="GridCell.Tab.0.center" timestamp="1594990065702">
+    <state width="1874" height="196" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1595010710140" />
+    <state width="1874" height="196" key="GridCell.Tab.0.center" timestamp="1595010710140">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1897" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1594990065702" />
-    <state width="1897" height="275" key="GridCell.Tab.0.left" timestamp="1594990065701">
+    <state width="1874" height="196" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1595010710140" />
+    <state width="1874" height="196" key="GridCell.Tab.0.left" timestamp="1595010710139">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1897" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1594990065701" />
-    <state width="1897" height="275" key="GridCell.Tab.0.right" timestamp="1594990065702">
+    <state width="1874" height="196" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1595010710139" />
+    <state width="1874" height="196" key="GridCell.Tab.0.right" timestamp="1595010710140">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1897" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1594990065702" />
+    <state width="1874" height="196" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1595010710140" />
     <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1594995292469">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
