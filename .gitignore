@@ -4,7 +4,7 @@
 client/node_modules
 /.pnp
 .pnp.js
-
+./pg_data
 # testing
 /coverage
 
