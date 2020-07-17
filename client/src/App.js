@@ -2,17 +2,15 @@ import React, {useState} from 'react';
 import './App.css';
 import {Header} from "./frame/header";
 import {Sidebar} from "./frame/sidebar"
-
-import {AddWordPage} from "./pages/addWord/addWordPage"
-import {TrainWaterfall} from "./pages/trainWaterfall/trainWaterFall"
 import {AppContext} from "./appContext"
+import pages from "./pages/pages"
 
 function App() {
     const defaultUsername = "guest"
     const defaultSideBarButtons = [{
         name: "Add word"
     }, {
-        name: "Train"
+        name: "Training"
     }, {
         name: "Vocabulary"
     }
@@ -28,9 +26,7 @@ function App() {
                 <Header username={username}/>
                 <div className="d-flex">
                     <Sidebar buttons={sideBarButtons}/>
-                    {(activePage === "Add word") ? <AddWordPage/> :
-                        (activePage === "Train") ? <TrainWaterfall/>
-                            : "nothing"}
+                    { pages[activePage] }
                 </div>
             </div>
         </AppContext.Provider>
