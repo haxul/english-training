@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f36fa85f-88ad-4364-a170-913d97559c22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/pages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/vocabulary/vocabularyPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/vocabulary/vocabularyPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frame/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/frame/sidebar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +58,11 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -88,8 +89,37 @@
       <option name="presentableId" value="Default" />
       <updated>1594989581336</updated>
       <workItem from="1594989582550" duration="5845000" />
-      <workItem from="1595010669901" duration="1057000" />
+      <workItem from="1595010669901" duration="2059000" />
     </task>
+    <task id="LOCAL-00001" summary="fix .idea">
+      <created>1595011893441</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595011893441</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add page">
+      <created>1595011913662</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595011913662</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add routes">
+      <created>1595011925946</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595011925946</updated>
+    </task>
+    <task id="LOCAL-00004" summary="remove switch">
+      <created>1595011943277</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595011943277</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,11 +137,26 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix .idea" />
+    <MESSAGE value="add page" />
+    <MESSAGE value="add routes" />
+    <MESSAGE value="remove switch" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove switch" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="641" y="355" width="628" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594993541379">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="641" y="355" width="628" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1594993541379" />
+    <state x="546" y="75" width="912" height="916" key="CommitChangelistDialog2" timestamp="1595011943215">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="546" y="75" width="912" height="916" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1595011943215" />
+    <state x="229" y="97" width="1536" height="879" key="DiffContextDialog" timestamp="1595011931955">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="229" y="97" width="1536" height="879" key="DiffContextDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1595011931955" />
     <state width="1874" height="196" key="GridCell.Tab.0.bottom" timestamp="1595010710140">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

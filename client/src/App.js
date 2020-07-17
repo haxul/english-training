@@ -7,17 +7,10 @@ import pages from "./pages/pages"
 
 function App() {
     const defaultUsername = "guest"
-    const defaultSideBarButtons = [{
-        name: "Add word"
-    }, {
-        name: "Training"
-    }, {
-        name: "Vocabulary"
-    }
-    ]
+    const buttonsName = Object.keys(pages)
     const [activePage, setActivePage] = useState("")
     const [username, setUsername] = useState(defaultUsername)
-    const [sideBarButtons, setSideBarButtons] = useState(defaultSideBarButtons)
+    const [sideBarButtons, setSideBarButtons] = useState(buttonsName)
     return (
         <AppContext.Provider value={{
             setActivePage
