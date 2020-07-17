@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${CONTAINER_DB:localhost}:5432/${POSTGRES_DB:english_train}
+    username: ${POSTGRES_USER:haxul}
+    password: ${POSTGRES_PASSWORD:testpassword}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
