@@ -25,7 +25,7 @@ class UserRepository {
             ps.setString(2, password)
             ps
         }, holder)
-        return holder.keys?.get(idColumn) as Int
+        return holder.keys!![idColumn] as Int
 
     }
 

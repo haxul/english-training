@@ -17,7 +17,7 @@ class UsersController {
     @Autowired
     lateinit var userService: UserService
 
-    @PostMapping
+    @PostMapping("/register")
     fun getUser(@Valid @RequestBody request: CreateUserRequest): CreateUserResponse {
         val userId = userService.createUser(request.account, request.password)
         return CreateUserResponse(request.account, userId)
