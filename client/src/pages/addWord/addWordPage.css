@@ -1,0 +1,49 @@
+.window {
+    height: 200px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #719ECE;
+    border: none;
+}
+
+.window:focus {
+    outline: none !important;
+}
+
+.errorStatus {
+    box-shadow: 0 0 10px rgba(235, 60, 54, 1);
+}
+
+.translation {
+    height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.wrapper {
+    margin-top: 50px;
+}
+
+.inputAddWord {
+    width: 200px;
+    height: 40px;
+    box-shadow: 0 0 10px #719ECE;
+    border-radius: 5px;
+    outline: none !important;
+}
+
+.buttonAddWord {
+    border-radius: 3px;
+    height: 38px;
+    background: rgb(222, 226, 230);
+    box-shadow: 0 0 10px #719ECE;
+    outline: none !important;
+}
+
+.headerForGoogle {
+    font-size: 25px;
+}
+
+
