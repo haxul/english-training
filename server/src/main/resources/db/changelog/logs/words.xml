@@ -1,0 +1,45 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="addWordsTable" author="haxul">
+        <createTable tableName="words">
+            <column name="id" type="int">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="value" type="varchar(500)"/>
+            <column name="translation" type="varchar(500)"/>
+        </createTable>
+
+        <createTable tableName="words_users">
+            <column name="user_id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="word_id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+
+        <addAutoIncrement
+                columnDataType="int"
+                columnName="id"
+                incrementBy="1"
+                schemaName="public"
+                startWith="1"
+                tableName="words"/>
+    </changeSet>
+    <changeSet id="addForeignKeyForUserWordsTable" author="haxul">
+        <addForeignKeyConstraint baseTableName="words_users" baseColumnNames="user_id"
+                                 constraintName="fk__user_id_users_words" referencedTableName="users"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    <changeSet id="addForeignKeyForWordWordsTable" author="haxul">
+        <addForeignKeyConstraint baseTableName="words_users" baseColumnNames="word_id"
+                                 constraintName="fk__word_id_users_words" referencedTableName="words"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>
