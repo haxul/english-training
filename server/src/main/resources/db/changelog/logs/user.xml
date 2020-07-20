@@ -28,5 +28,14 @@
                 tableName="users"/>
     </changeSet>
 
+    <changeSet id="addDefaultTimeForUser" author="haxul">
+        <addColumn tableName="users">
+            <column name="created" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <addColumn tableName="users">
+            <column name="last_visit" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+
 
 </databaseChangeLog>
