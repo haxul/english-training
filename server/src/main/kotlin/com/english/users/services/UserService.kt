@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Service
 import org.springframework.security.core.userdetails.User as SpringUser;
 
@@ -15,9 +16,13 @@ class UserService : UserDetailsService {
     @Autowired
     lateinit var userRepository: UserRepository
 
+    @Autowired
+    lateinit var bCryptPasswordEncoder: BCryptPasswordEncoder
+
     fun createUser(account: String, password: String): Int {
         if (userRepository.findUserByAccount(account).isNotEmpty()) throw UserExistsException()
-        return userRepository.createUser(account, password)
+        val encryptedPassword = bCryptPasswordEncoder.encode(password)
+        return userRepository.createUser(account, encryptedPassword)
     }
 
     fun findUserByAccount(account: String): User? {
