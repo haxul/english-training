@@ -46,27 +46,6 @@ async function translateByGoogle(russianWord) {
 
     const data = await response.json()
     console.log(data)
-
-    fetch("https://google-translate1.p.rapidapi.com/language/translate/v2", {
-        "method": "POST",
-        "headers": {
-            "x-rapidapi-host": "google-translate1.p.rapidapi.com",
-            "x-rapidapi-key": "868d1b1cbcmsh2b3edd9e06031f7p10b86bjsn649ef2f9010e",
-            "accept-encoding": "application/gzip",
-            "content-type": "application/x-www-form-urlencoded"
-        },
-        "body": {
-            "source": "en",
-            "q": "Hello, world!",
-            "target": "es"
-        }
-    })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => {
-            console.log(err);
-        });
 }
 
 export function AddWordPage() {
