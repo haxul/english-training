@@ -36,7 +36,7 @@ class UsersController {
     }
 
     @PutMapping
-    fun updateUser(@Valid @RequestBody request: UpdateUserRequest):String  {
+    fun updateUser(@Valid @RequestBody request: UpdateUserRequest): String  {
         val userContext = SecurityContextHolder.loggedUser
         userService.updateUserById(request.password, userContext?.userId ?: throw BadRequestException("User is not found"))
         return "User ${userContext.userId} is updated"

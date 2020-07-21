@@ -28,7 +28,7 @@ class AuthInterceptor : HandlerInterceptorAdapter() {
             val url = request.requestURI
             val method = request.method
             if (method == "POST" && url in availableUrl) return true
-            val token = tokenHeader.replace("Bearer ", "")
+            val token = tokenHeader?.replace("Bearer ", "") ?: throw AccessForbiddenException()
             val claims: Claims = Jwts.parser()
                     .setSigningKey(DatatypeConverter.parseBase64Binary(environment.getProperty("token.salt")))
                     .parseClaimsJws(token).body
