@@ -1,6 +1,7 @@
 package com.english.users.repositories
 
 import com.english.users.entities.User
+import com.english.users.repositories.rowMapper.UserRowMapper
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.support.GeneratedKeyHolder
@@ -31,12 +32,7 @@ class UserRepository {
 
     fun findUserByAccount(account: String):List<User> {
         val sql = "SELECT * FROM users WHERE account = ?"
-        return jdbcTemplate.query(sql, arrayOf(account)) { rs, _ ->
-            val id = rs.getInt("id")
-            val account = rs.getString("account")
-            val password = rs.getString("password")
-            val isDeleted = rs.getBoolean("is_deleted")
-            User(id, account, password, isDeleted)
-        }
+        return jdbcTemplate.query(sql, arrayOf(account), UserRowMapper())
     }
+
 }
