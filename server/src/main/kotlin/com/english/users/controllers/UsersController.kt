@@ -2,7 +2,10 @@ package com.english.users.controllers
 
 import com.english.users.configurations.SecurityContextHolder
 import com.english.users.dto.SecurityContextUser
+import com.english.users.entities.User
+import com.english.users.exceptions.BadRequestException
 import com.english.users.request.CreateUserRequest
+import com.english.users.request.UpdateUserRequest
 import com.english.users.response.CreateUserResponse
 import com.english.users.response.LoginResponse
 import com.english.users.services.UserService
@@ -32,8 +35,10 @@ class UsersController {
         return LoginResponse(token, Date())
     }
 
-    @GetMapping
-    fun test():SecurityContextUser? {
-        return SecurityContextHolder.loggedUser
+    @PutMapping
+    fun updateUser(@Valid @RequestBody request: UpdateUserRequest):String  {
+        val userContext = SecurityContextHolder.loggedUser
+        userService.updateUserById(request.password, userContext?.userId ?: throw BadRequestException("User is not found"))
+        return "User ${userContext.userId} is updated"
     }
 }

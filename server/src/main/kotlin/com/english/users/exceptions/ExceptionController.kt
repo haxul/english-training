@@ -30,6 +30,12 @@ class ExceptionController : ResponseEntityExceptionHandler() {
         return ResponseEntity(errorMessage, HttpHeaders(), HttpStatus.FORBIDDEN)
     }
 
+    @ExceptionHandler(value = [BadRequestException::class])
+    fun handleBadRequestException(ex: Exception?, request: WebRequest?): ResponseEntity<Any?>? {
+        val errorMessage = ex?.message?.let { ErrorMessage("Error", it) }
+        return ResponseEntity(errorMessage, HttpHeaders(), HttpStatus.FORBIDDEN)
+    }
+
     @ExceptionHandler(value = [AccessForbiddenException::class])
     fun handleAccessForbiddenException(ex: Exception?, request: WebRequest?): ResponseEntity<Any?>? {
         return ResponseEntity("", HttpHeaders(), HttpStatus.FORBIDDEN)

@@ -63,5 +63,12 @@ class UserService {
                 .signWith(signatureAlgorithm, signingKey)
                 .compact()
     }
+
+    fun updateUserById(password: String, userId: Int) {
+        val bCryptPasswordEncoder = BCryptPasswordEncoder()
+        val rowPassword = salt + password
+        val encryptedPassword = bCryptPasswordEncoder.encode(rowPassword)
+        userRepository.updateUserById(encryptedPassword, userId)
+    }
 }
 

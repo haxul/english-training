@@ -35,4 +35,8 @@ class UserRepository {
         return jdbcTemplate.query(sql, arrayOf(account), UserRowMapper())
     }
 
+    fun updateUserById(password: String, userId : Int) {
+        val sql = "UPDATE users SET password = ? WHERE id = ?"
+        jdbcTemplate.update(sql, password, userId)
+    }
 }
