@@ -33,6 +33,7 @@ export function AddWordPage() {
 
     const handleButtonToAddWord = async () => {
         if (isError || isInputMistake) return
+        if (!windowText || !translationText || !addedWord ) return
         const response = await saveWord(windowText, addedWord)
         if (!response) {
             setInputMistake(true)
