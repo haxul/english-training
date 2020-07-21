@@ -7,6 +7,10 @@
     font-size: 25px;
 }
 
+.isError {
+    color: #ff3475
+}
+
 .inputLogin {
     width: 200px;
     height: 40px;
