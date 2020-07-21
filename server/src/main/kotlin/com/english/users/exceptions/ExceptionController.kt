@@ -19,8 +19,14 @@ class ExceptionController : ResponseEntityExceptionHandler() {
     }
 
     @ExceptionHandler(value = [UserExistsException::class])
-    fun handleAnyException(ex: Exception?, request: WebRequest?): ResponseEntity<Any?>? {
+    fun handleUserExistsException(ex: Exception?, request: WebRequest?): ResponseEntity<Any?>? {
         val errorMessage = ErrorMessage("Error", "User exists")
         return ResponseEntity(errorMessage, HttpHeaders(), HttpStatus.BAD_REQUEST)
+    }
+
+    @ExceptionHandler(value = [UserNotFoundException::class])
+    fun handleUserNotFoundException(ex: Exception?, request: WebRequest?): ResponseEntity<Any?>? {
+        val errorMessage = ErrorMessage("Error", "Forbidden")
+        return ResponseEntity(errorMessage, HttpHeaders(), HttpStatus.FORBIDDEN)
     }
 }

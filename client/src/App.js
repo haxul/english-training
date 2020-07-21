@@ -4,7 +4,7 @@ import {Header} from "./frame/header";
 import {Sidebar} from "./frame/sidebar"
 import {AppContext} from "./appContext"
 import pages from "./pages/pages"
-import {RegistrationPage} from "./pages/registrationPage/registrationPage"
+import {LoginPage} from "./pages/registrationPage/loginPage"
 
 function App() {
     const token = localStorage.getItem("token")
@@ -15,7 +15,7 @@ function App() {
     const [username, setUsername] = useState(defaultUsername)
     const [sideBarButtons, setSideBarButtons] = useState(buttonsName)
 
-    if (!token) return <RegistrationPage/>
+    if (!token) return <LoginPage/>
 
     return (
         <AppContext.Provider value={{setActivePage}}>
