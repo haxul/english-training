@@ -38,6 +38,10 @@ class WordRepository {
         return jdbcTemplate.queryForObject(sql, arrayOf(userId, wordId)) { rs, _ -> rs.getBoolean("exists") }!!
     }
 
+    fun doesWordExists(value: String): Boolean {
+        val sql = "select exists(SELECT * FROM words WHERE value= ?)"
+        return jdbcTemplate.queryForObject(sql, arrayOf(value)) { rs, _ -> rs.getBoolean("exists") }!!
+    }
 
     fun findUserWordsByUserId(userId: Int): List<Word> {
         val sql = """
@@ -46,5 +50,22 @@ class WordRepository {
                 WHERE user_id = ?
         """.trimIndent()
         return jdbcTemplate.query(sql, arrayOf(userId), WordRowMapper())
+    }
+
+    fun findWordByValue(value: String): Word? {
+        val sql = "SELECT * FROM words WHERE value =?"
+        val words: List<Word> = jdbcTemplate.query(sql, arrayOf(value), WordRowMapper())
+        return if (words.isEmpty()) null else words.first()
+    }
+
+    fun updateWordValueById(newValue: String, newTranslation: String, wordId: Int) {
+        val sql = "UPDATE words SET value =?, translation = ? WHERE id = ?"
+        jdbcTemplate.update(sql, newValue, newTranslation, wordId)
+    }
+
+    fun findWordById(wordId: Int): Word? {
+        val sql = "SELECT * FROM words WHERE id =?"
+        val words: List<Word> = jdbcTemplate.query(sql, arrayOf(wordId), WordRowMapper())
+        return if (words.isEmpty()) null else words.first()
     }
 }
