@@ -12,7 +12,7 @@
 }
 
 .errorStatus {
-    box-shadow: 0 0 10px rgba(235, 60, 54, 1);
+    box-shadow: 0 0 10px rgba(235, 60, 54, 1)!important;
 }
 
 .translation {

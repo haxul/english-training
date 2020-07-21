@@ -1,8 +1,6 @@
 package com.english.users.controllers
 
 import com.english.users.configurations.SecurityContextHolder
-import com.english.users.dto.SecurityContextUser
-import com.english.users.entities.User
 import com.english.users.exceptions.BadRequestException
 import com.english.users.request.CreateUserRequest
 import com.english.users.request.UpdateUserRequest
@@ -12,8 +10,6 @@ import com.english.users.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import java.util.*
-import javax.servlet.http.HttpServletRequest
-import javax.servlet.http.HttpServletResponse
 import javax.validation.Valid
 
 @RestController

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState } from 'react';
 import './App.css';
 import {Header} from "./frame/header";
 import {Sidebar} from "./frame/sidebar"
@@ -8,14 +8,12 @@ import {LoginPage} from "./pages/registrationPage/loginPage"
 
 function App() {
     const token = localStorage.getItem("token")
-
-    const defaultUsername = "guest"
+    const account = localStorage.getItem("account")
     const buttonsName = Object.keys(pages)
-    const [activePage, setActivePage] = useState("")
-    const [username, setUsername] = useState(defaultUsername)
+    const [activePage, setActivePage] = useState("Add word")
+    const [username, setUsername] = useState(account)
     const [sideBarButtons, setSideBarButtons] = useState(buttonsName)
-
-    if (!token) return <LoginPage/>
+    if (!token || !account) return <LoginPage/>
 
     return (
         <AppContext.Provider value={{setActivePage}}>

@@ -11,7 +11,7 @@ export function LoginPage() {
         const headers = new Headers();
         headers.append("Content-Type", "application/json");
 
-        const url = baseUrl + "/users/login"
+        const url =  baseUrl + "/users/login"
         const body = {
             "account": login,
             "password": password
