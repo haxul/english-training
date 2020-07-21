@@ -1,15 +1,16 @@
 package com.english.users.controllers
 
+import com.english.users.configurations.SecurityContextHolder
+import com.english.users.dto.SecurityContextUser
 import com.english.users.request.CreateUserRequest
 import com.english.users.response.CreateUserResponse
 import com.english.users.response.LoginResponse
 import com.english.users.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import java.util.*
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 import javax.validation.Valid
 
 @RestController
@@ -29,5 +30,10 @@ class UsersController {
     fun loginUser(@Valid @RequestBody request: CreateUserRequest) : LoginResponse {
         val token = userService.loginUser(request.account, request.password)
         return LoginResponse(token, Date())
+    }
+
+    @GetMapping
+    fun test():SecurityContextUser? {
+        return SecurityContextHolder.loggedUser
     }
 }
