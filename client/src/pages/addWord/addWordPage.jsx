@@ -25,20 +25,26 @@ async function saveWord(word, translation) {
 
 async function translateByGoogle(russianWord) {
     const token = localStorage.getItem("token")
-    const account = localStorage.getItem("account"")
+    const account = localStorage.getItem("account")
     if (!token || !account) document.location.reload()
 
-    const response = await fetch("https://cors-anywhere.herokuapp.com/https://71ceo6bjqk.execute-api.us-east-2.amazonaws.com/default/translateRussian?text=" + russianWord, {
-        method: "GET",
-        headers: {
-            'Origin': '*',
-            'Access-Control-Allow-Headers': '*',
-            'Access-Control-Allow-Origin': '*',
-            "Content-Type": "text/plain",
-        }
+    const url =  baseUrl + "/words/amazon/translation"
+    const body = {
+        "text": russianWord
+    }
+    const response = await fetch(url, {
+        method: "POST",
+        headers : {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
     })
-    const data = await response.json()
-    return data.result
+    if (response.status === 200) {
+        const data = await response.json()
+        return data.result
+    }
+    return null
 }
 
 export function AddWordPage() {
@@ -81,8 +87,12 @@ export function AddWordPage() {
     const getTranslation = async (phrase) => {
         if (!phrase) return
         const text = await translateByGoogle(phrase)
+        if (!text) {
+            setError(true)
+            return
+        }
         setWindowText(phrase)
-        setTimeout(() => setTranslationText(text), 1000)
+        setTranslationText(text)
     }
     return (
         <div className="container-fluid wrapper">
