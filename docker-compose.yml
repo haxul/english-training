@@ -12,4 +12,3 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - 5435:5432
-    restart: always
