@@ -27,25 +27,17 @@ async function translateByGoogle(russianWord) {
     const token = localStorage.getItem("token")
     if (!token) document.location.reload()
 
-    const body = {
-        "q": russianWord,
-        "target": "en",
-        "source": "ru"
-    }
-
-    const response = await fetch("https://google-translate1.p.rapidapi.com/language/translate/v2", {
-        "method": "POST",
-        "headers": {
-            "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
-            "X-RapidAPI-Key": "868d1b1cbcmsh2b3edd9e06031f7p10b86bjsn649ef2f9010e",
-            "accept-encoding": "application/gzip",
-            "content-type": "application/x-www-form-urlencoded"
-        },
-        "body": JSON.stringify(body)
+    const response = await fetch("https://cors-anywhere.herokuapp.com/https://71ceo6bjqk.execute-api.us-east-2.amazonaws.com/default/translateRussian?text=" + russianWord, {
+        method: "GET",
+        headers: {
+            'Origin': '*',
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Allow-Origin': '*',
+            "Content-Type": "text/plain",
+        }
     })
-
     const data = await response.json()
-    console.log(data)
+    return data.result
 }
 
 export function AddWordPage() {
@@ -58,7 +50,7 @@ export function AddWordPage() {
 
     const handleButtonToAddWord = async () => {
         if (isError || isInputMistake) return
-        if (!windowText || !translationText || !addedWord ) return
+        if (!windowText || !translationText || !addedWord) return
         const response = await saveWord(windowText, addedWord)
         if (!response) {
             setInputMistake(true)
@@ -86,9 +78,10 @@ export function AddWordPage() {
     }
 
     const getTranslation = async (phrase) => {
-        await translateByGoogle(phrase)
+        if (!phrase) return
+        const text = await translateByGoogle(phrase)
         setWindowText(phrase)
-        setTimeout(() => setTranslationText(Math.random()), 1000)
+        setTimeout(() => setTranslationText(text), 1000)
     }
     return (
         <div className="container-fluid wrapper">
@@ -97,7 +90,8 @@ export function AddWordPage() {
             </div>
             <div className="row justify-content-center">
                 <div className={`col-4  `}>
-                    <textarea id="window" className={`window ${isError ? "errorStatus" : ""}`} onChange={handleWindowText}/>
+                    <textarea id="window" className={`window ${isError ? "errorStatus" : ""}`}
+                              onChange={handleWindowText}/>
                 </div>
 
                 <div className="translation col-4">
