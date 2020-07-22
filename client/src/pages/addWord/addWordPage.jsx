@@ -25,7 +25,8 @@ async function saveWord(word, translation) {
 
 async function translateByGoogle(russianWord) {
     const token = localStorage.getItem("token")
-    if (!token) document.location.reload()
+    const account = localStorage.getItem("account"")
+    if (!token || !account) document.location.reload()
 
     const response = await fetch("https://cors-anywhere.herokuapp.com/https://71ceo6bjqk.execute-api.us-east-2.amazonaws.com/default/translateRussian?text=" + russianWord, {
         method: "GET",
