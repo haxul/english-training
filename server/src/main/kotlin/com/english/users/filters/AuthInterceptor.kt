@@ -28,6 +28,7 @@ class AuthInterceptor : HandlerInterceptorAdapter() {
             val url = request.requestURI
             val method = request.method
             if (method == "OPTIONS") return true
+            //TODO сделать обрабтку стартовой страницы
             if (method == "POST" && url in availableUrl) return true
             val token = tokenHeader?.replace("Bearer ", "") ?: throw AccessForbiddenException()
             val claims: Claims = Jwts.parser()

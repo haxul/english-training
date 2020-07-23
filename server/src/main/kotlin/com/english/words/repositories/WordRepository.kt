@@ -43,13 +43,13 @@ class WordRepository {
         return jdbcTemplate.queryForObject(sql, arrayOf(value)) { rs, _ -> rs.getBoolean("exists") }!!
     }
 
-    fun findUserWordsByUserId(userId: Int): List<Word> {
+    fun findUserWordsByUserId(userId: Int, limit:Int, offset:Int): List<Word> {
         val sql = """
                 SELECT words.id, words.value, words.translation FROM words_users aim
                 LEFT JOIN words ON aim.word_id = words.id
-                WHERE user_id = ?
+                WHERE user_id = ? limit ? offset ?
         """.trimIndent()
-        return jdbcTemplate.query(sql, arrayOf(userId), WordRowMapper())
+        return jdbcTemplate.query(sql, arrayOf(userId, limit, offset), WordRowMapper())
     }
 
     fun findWordByValue(value: String): Word? {

@@ -3,6 +3,7 @@ package com.english.words.controllers
 import com.english.users.configurations.SecurityContextHolder
 import com.english.users.exceptions.BadRequestException
 import com.english.words.CreateWordResponse
+import com.english.words.entities.Word
 import com.english.words.requests.CreateWordRequest
 import com.english.words.requests.TranslateAmazonRequest
 import com.english.words.requests.UpdateWordRequest
@@ -48,5 +49,11 @@ class WordController {
                 .build()
         val response = client.send(request, HttpResponse.BodyHandlers.ofString());
         return Gson().fromJson(response.body(), AmazonTranslationResponse::class.java)
+    }
+
+    @GetMapping
+    fun getVocabulary(@RequestParam page:Int) : List<Word> {
+        val userId = SecurityContextHolder.loggedUser?.userId ?: throw BadRequestException("User is not found")
+        return wordsService.findUserWordsByUserId(userId, page)
     }
 }

@@ -10,7 +10,7 @@ function App() {
     const token = localStorage.getItem("token")
     const account = localStorage.getItem("account")
     const buttonsName = Object.keys(pages)
-    const [activePage, setActivePage] = useState("Add word")
+    const [activePage, setActivePage] = useState("Vocabulary")
     const [username, setUsername] = useState(account)
     const [sideBarButtons, setSideBarButtons] = useState(buttonsName)
     if (!token || !account) return <LoginPage/>

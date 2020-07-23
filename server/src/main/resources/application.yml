@@ -19,3 +19,6 @@ token:
   expiration: 2592000000
   salt: helloworld
 
+words:
+  pagination:
+    limit: 25

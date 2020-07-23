@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import "./addWordPage.css"
-import {baseUrl} from "../../utils/connection"
+import {baseUrl, createAuthHeaders} from "../../utils/connection"
 
 async function saveWord(word, translation) {
     const token = localStorage.getItem("token")
@@ -10,10 +10,7 @@ async function saveWord(word, translation) {
         translation
     }
     const response = await fetch(`${baseUrl}/words`, {
-        headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json"
-        },
+        headers: createAuthHeaders(token),
         method: "POST",
         body: JSON.stringify(body)
     })
@@ -34,10 +31,7 @@ async function translateByGoogle(russianWord) {
     }
     const response = await fetch(url, {
         method: "POST",
-        headers : {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json"
-        },
+        headers : createAuthHeaders(token),
         body: JSON.stringify(body)
     })
     if (response.status === 200) {
