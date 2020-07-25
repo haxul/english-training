@@ -28,7 +28,7 @@ class AuthInterceptor : HandlerInterceptorAdapter() {
             val url = request.requestURI
             val method = request.method
             if (method == "OPTIONS") return true
-            //TODO сделать обрабтку стартовой страницы
+            if (method == "GET" && (isStaticFile(url) || url == "/")) return true
             if (method == "POST" && url in availableUrl) return true
             val token = tokenHeader?.replace("Bearer ", "") ?: throw AccessForbiddenException()
             val claims: Claims = Jwts.parser()
@@ -40,12 +40,17 @@ class AuthInterceptor : HandlerInterceptorAdapter() {
             val userId = claims.subject.toInt()
             SecurityContextHolder.loggedUser = SecurityContextUser(account, userId)
             return true
-        } catch (e : Exception) {
+        } catch (e: Exception) {
             throw AccessForbiddenException()
         }
     }
 
     override fun postHandle(request: HttpServletRequest, response: HttpServletResponse, handler: Any, modelAndView: ModelAndView?) {
         SecurityContextHolder.loggedUser = null
+    }
+
+    fun isStaticFile(url:String) :Boolean {
+        val regex = """(/.+\.((json)|(css)|(js)|(ico)|(html)))""".toRegex()
+        return regex.containsMatchIn(url)
     }
 }
