@@ -11,9 +11,7 @@ async function getVocabulary(page) {
         method: "GET",
         headers: createAuthHeaders(token)
     })
-    if (response.status === 200) {
-        return await response.json()
-    }
+    if (response.status === 200) return await response.json()
     return null
 }
 

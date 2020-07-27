@@ -1,0 +1,15 @@
+.word {
+    border: 1px  #719ECE;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.word:hover {
+    background: #719ece;
+}
+
+.guess {
+    font-size: 30px;
+}

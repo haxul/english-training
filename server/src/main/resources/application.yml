@@ -21,4 +21,4 @@ token:
 
 words:
   pagination:
-    limit: 25
+    limit: 100
