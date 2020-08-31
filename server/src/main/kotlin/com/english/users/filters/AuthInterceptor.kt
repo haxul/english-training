@@ -48,7 +48,7 @@ class AuthInterceptor : HandlerInterceptorAdapter() {
     }
 
     override fun postHandle(request: HttpServletRequest, response: HttpServletResponse, handler: Any, modelAndView: ModelAndView?) {
-        SecurityContextHolder.loggedUser = null
+        SecurityContextHolder.loggedUser.remove()
     }
 
     fun isStaticFile(url:String) :Boolean {
